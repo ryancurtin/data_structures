@@ -57,7 +57,6 @@ def reverse_linked_list_iterative(head)
     curr = n
   end
 
-  ll.head = prev
 end
 
 def reverse_linked_list_recursive(ll)
