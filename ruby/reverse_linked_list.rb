@@ -1,5 +1,5 @@
 class LinkedList
-  attr_accessor :head, :nodes
+  attr_accessor :nodes
 
   def initialize(nodes=[])
     @nodes = nodes
@@ -47,7 +47,7 @@ def build_iterative_linked_list(len)
   ll
 end
 
-def reverse_linked_list_iterative(ll, head)
+def reverse_linked_list_iterative(head)
   prev = nil
   curr = head
   while curr != nil
@@ -69,7 +69,7 @@ def reverse_linked_list_recursive(ll)
 
   reverse = reverse_linked_list_recursive(second)
   second.n = ll
-  
+
   return reverse
 end
 
