@@ -26,7 +26,7 @@ end
 # Need to build separate nodes like iterative definition
 def build_recursive_linked_list(l, i)
   return nil if l <= 0  
-  node = Node.new(i, linked_list((l-1), i+1))
+  node = Node.new(i, build_recursive_linked_list((l-1), i+1))
   l -= 1
 
   node
@@ -60,3 +60,18 @@ def reverse_linked_list_iterative(ll, head)
   ll.head = prev
 end
 
+def reverse_linked_list_recursive(ll)
+  return nil if ll.nil?
+  return ll if ll.n.nil?
+
+  second = ll.n
+  ll.n = nil
+
+  reverse = reverse_linked_list_recursive(second)
+  second.n = ll
+  
+  return reverse
+end
+
+ll = build_recursive_linked_list(5, 0)
+reverse_linked_list_recursive(ll)
